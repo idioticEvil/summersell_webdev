@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .grid-container {
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(2, 1fr); /* Ensures two columns with equal width */
+                grid-auto-flow: dense; /* Helps in filling empty spaces in the grid */
+            }
+
+            .box {
+                box-sizing: border-box;
+                padding: 0.1rem 0.4rem 0.3rem 0.4rem;
+                border: 3px solid #ccc;
+                margin: 0;
+                border-radius: 15px;
+                background-color: #f9f9f9;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .box h2, .box p {
+                margin: 0;
+                padding: 0;
+                line-height: 1.3;
+            }
+
+            /* Ensures the last item spans the entire width if it's the only one in the last row */
+            .grid-container :last-child:nth-last-child(odd) {
+                grid-column: 1 / -1;
+            }
+
+            /* Responsive layout for smaller screens */
+            @media screen and (max-width: 450px) {
+                .grid-container {
+                    grid-template-columns: 1fr; /* Single column on smaller screens */
+                }
+            }
+
+            .box:hover {
+                border-color: #777;
+                transition: border-color 0.3s;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Grid Testing</h1>
+
+        <div class="grid-container">
+            <div class = "box">
+                <h2>Ongoing Research</h2>
+                <p>The project is ongoing. We update our case information and project data each semester to account for previously unidentified lynchings and attempted lynchings.</p>
+            </div>
+            <div class = "box">
+                <h2>Mapping Racial Violence </h2>
+                <p>
+                This map is an ongoing effort to pin over 800 lynchings and attempted lynchings in Alabama from 1865 to 1981. 
+                The highlighted counties are ones whose victims have been extensively researched. 
+                The Alabama Memory Project researches a new county each semester.
+            </p>
+            </div>
+            <div class = "box">
+                <h2>Lynching In Alabama</h2>
+                <p>
+                The Black men, women, and children who were lynched died twice to history.  First, when their lives were taken by lynch mobs; and again, when history failed to record  their story. 
+                    There are over 800 documented cases of racial terror lynchings in the state of Alabama. We hope that by sharing their names and their stories, this project will provide a measure of justice and a different memory of the past.
+                    This project is an ongoing effort. We identify more lynchings and attempted lynchings and expand our methods every semester. You may navigate to a specific victim’s case via the map or search bar below.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

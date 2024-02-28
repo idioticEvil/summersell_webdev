@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- 
+TODO:
+- Refine Map Scaling
+- Replace Mission Statement
+- Verify Accessibility
+    - Keyboard Navigation
+    - Screen Reader
+-->
+
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <style>
+            .pageContent {
+                max-width: 800px;
+                margin: auto;
+                padding: 0 1rem 0 1rem !important;
+                font-family: 'Alegreya', serif !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .headerAndText h2 {
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                font-family: 'Alegreya', serif !important;
+                font-size: x-large !important;
+                color: #2F4577 !important;
+            }
+
+            .headerAndText p {
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                font-family: 'Alegreya', serif !important;
+            }
+
+            .top-logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                padding: 1rem 0 1rem 0;
+                border-radius: 15px;
+            }
+
+            .welcome-image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                border-radius: 15px;
+            }
+
+            .grid-container {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr); /* Ensures two columns with equal width */
+                grid-auto-flow: dense; /* Helps in filling empty spaces in the grid */
+                max-width: 100%;
+                margin: 1rem 0 1rem 0;
+            }
+
+            .grid-container a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            /* Ensures the last item spans the entire width if it's the only one in the last row */
+            .grid-container :last-child:nth-last-child(odd) {
+                grid-column: 1 / -1;
+            }
+
+            /* Responsive layout for smaller screens */
+            @media screen and (max-width: 500px) {
+                .grid-container {
+                    grid-template-columns: 1fr; /* Single column on smaller screens */
+                }
+            }
+
+            .box {
+                box-sizing: border-box;
+                padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+                border: 3px solid #ccc;
+                margin: 0;
+                min-height: 6rem;
+                border-radius: 15px;
+                background-color: #f9f9f9;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+            }
+
+            .box.force-bigger {
+                min-height: 18.5rem !important;
+            }
+
+            .box h1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%; /* Ensure the h1 takes full height of the box */
+                text-align: center;
+                margin: 0;
+                font-family: 'Alegreya', serif !important;
+                font-size: xx-large !important;
+                color: #2F4577;
+            }
+
+            .box h2, .box p {
+                margin: 0.25rem;
+                padding: 0;
+                line-height: normal !important;
+                font-family: 'Alegreya', serif !important;
+            }
+
+            .box h2 {
+                font-size: x-large !important;
+            }
+
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 3;
+                font-family: 'Alegreya', serif !important;
+                font-size: xx-large !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                text-align: center;
+            }
+
+            .box:hover {
+                border-color: #777;
+                transition: border-color 0.3s;
+                cursor: pointer;
+            }
+
+            .iframe-container {
+                position: relative !important;
+                width: 130% !important;
+                height: 130% !important;
+                overflow: hidden !important;
+                transform: translate(-10%, -10%) !important;
+                padding-bottom: 0% !important;
+            }
+
+            .iframe-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class ="pageContent">
+            <img src="https://adhc.lib.ua.edu/Alabama_Memory/files/asset/d0b1404e7435fac19c8b91fa5e10526a2b73fb6d.png" alt="Alabama Memory Logo" class="top-logo">
+            <img src="https://adhc.lib.ua.edu/Alabama_Memory/files/asset/a0f8e646865fe1e9043863bda0372099e76007c4.jpeg" alt="A group of diverse students standing in front of the Equal Justice Initiative's National Memorial for Peace and Justice. The shadows of the memorial are cast on the ground in front of them." class="welcome-image">
+            
+            <div class = "headerAndText">
+                <h2>Mission Statement</h2>
+                <p>
+                    The Alabama Memory Project is a collaborative effort to document and share the history of racial terror lynchings in Alabama. 
+                    Our goal is to provide a comprehensive and accessible resource for scholars, students, and the public to learn about the history of lynching in Alabama. 
+                    We hope that by sharing the names and stories of the victims, this project will provide a measure of justice and a different memory of the past.
+                </p>
+            </div>
+            <div class="grid-container">
+                <div class="box" data-href="/Alabama_Memory/s/sandbox/page/about-us-draft" tabindex="0" role="button" aria-label="About Us">
+                    <h1>About Us</h1>
+                </div>
+                <div class="box" data-href="/Alabama_Memory/s/sandbox/page/items" tabindex="0" role="button" aria-label="Victim Biographies">
+                    <h1>Victim Biographies</h1>
+                </div>
+                <div class="box force-bigger" data-href="/Alabama_Memory/s/sandbox/page/map" tabindex="0" role="button" aria-label="Interactive Map">
+                    <div class="iframe-container">
+                        <div class="iframe-overlay"></div>
+                        <iframe src="https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fexperience.arcgis.com%2Fexperience%2F6882af2c26724956ba45c998434e49e2%2F&data=05%7C02%7Cwwmink%40crimson.ua.edu%7C1cddd909abf940a3a90b08dc2d8e5c57%7C2a00728ef0d040b4a4e8ce433f3fbca7%7C0%7C0%7C638435336653911162%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=LmjUgTxAStG%2F3%2Bm9FFk8S5G868EP8lOwjKTN2PY2baw%3D&reserved=0" width="100%" height="100%" frameborder="0" style="border:0" tabindex="-1"></iframe>
+                        <div class="centered">Interactive Map</div>
+                    </div> 
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script> /* This script allows the boxes to be clickable */
+                $(document).ready(function() {
+                    $('.box').click(function() {
+                        window.location = $(this).data('href');
+                    });
+                });
+                $('.box').on('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') { // Check for Enter or Spacebar
+                        window.location = $(this).data('href');  
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
